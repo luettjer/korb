@@ -1,0 +1,23 @@
+{
+  "name": "korb",
+  "version": "1.0.0",
+  "description": "crossplatform nba scores",
+  "main": "src/index.js",
+  "repository": "https://github.com/heiym/korb",
+  "author": "heiym",
+  "license": "GPL3",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "start": "npm run build && electron ./dist/index.js"
+  },
+  "dependencies": {
+    "@types/lokijs": "^1.5.3",
+    "@types/node": "12.12.26",
+    "@types/node-fetch": "^2.5.4",
+    "electron": "^7.1.10",
+    "lokijs": "^1.5.8",
+    "node-fetch": "^2.6.0"
+  }
+}
