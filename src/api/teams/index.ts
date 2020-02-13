@@ -3,35 +3,41 @@ import fetch from "node-fetch";
 
 export class Teams extends NbaApi {
   constructor(additional_headers?: object) {
-    super();
-
-    if(additional_headers) {
-      this.headers = Object.assign(this.headers, additional_headers);
-    }
+    super(additional_headers);
   }
 
-  getTeams() {
+  fetchTeams() {
     return fetch(this.api_url + "v2/" + this.year + "/teams.json", this.headers)
     .then(res => res.json());
   }
 
-  getTeamsMetaData() {
+  fetchTeamsConfig() {
     return fetch(this.api_url + this.year + "/teams_config.json", this.headers)
     .then(res => res.json());
   }
 
-  getTeamSchedule(urlName: string) {
+  fetchTeamsConfigYear(configYear: number) {
+    return fetch(this.api_url + configYear + "/teams_config.json", this.headers)
+    .then(res => res.json());
+  }
+
+  fetchTeamSchedule(urlName: string) {
     return fetch(this.api_url + "v1/" + this.year + "/teams/" + urlName + "/schedule.json", this.headers)
     .then(res => res.json());
   }
 
-  getTeamRoster(urlName: string) {
+  fetchTeamScheduleYear(scheduleYear: number, urlName: string) {
+    return fetch(this.api_url + "v1/" + scheduleYear + "/teams/" + urlName + "/schedule.json", this.headers)
+    .then(res => res.json()); 
+  }
+
+  fetchTeamRoster(urlName: string) {
     return fetch(this.api_url + "v1/" + this.year + "/teams/" + urlName + "/roster.json", this.headers)
     .then(res => res.json());
   }
 
-  getTeamLeaders(urlName: string) {
+  fetchTeamLeaders(urlName: string) {
     return fetch(this.api_url + "v1/"  + this.year + "/teams/" + urlName + "/leaders.json", this.headers)
     .then(res => res.json());
-  }
+  } 
 }
