@@ -1,4 +1,4 @@
-export const ApiHeaders = {
+const ApiHeaders = {
     "Accept-Encoding": "gzip, deflate, br",
     "Accept-Language": "de, en-US",
     "Connection": "keep-alive",
@@ -7,5 +7,7 @@ export const ApiHeaders = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0",
 };
 
-export const API_URL = "https://data.nba.com/prod/";
-export const YEAR = 2019;
+const API_URL = "https://data.nba.com/prod/";
+const YEAR = 2019;
+
+export { ApiHeaders, API_URL, YEAR };

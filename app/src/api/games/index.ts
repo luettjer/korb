@@ -4,6 +4,7 @@ import fetch from "node-fetch";
 export class Games extends NbaApi {
   constructor(additional_headers?: object) {
     super(additional_headers);
+    console.log("tsttst2");
   }
 
   fetchBoxscore(game_date: Date, game_id: string) {

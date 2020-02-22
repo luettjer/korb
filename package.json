@@ -2,22 +2,36 @@
   "name": "korb",
   "version": "1.0.0",
   "description": "crossplatform nba scores",
+  "type": "module",
   "main": "src/index.js",
   "repository": "https://github.com/heiym/korb",
   "author": "heiym",
   "license": "GPL3",
   "private": true,
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && rollup -c",
     "watch": "tsc -w",
-    "start": "npm run build && electron ./dist/index.js"
+    "start": "electron ./dist/index.js",
+    "dev": "tsc && rollup -cw"
   },
   "dependencies": {
-    "@types/lokijs": "^1.5.3",
-    "@types/node": "12.12.26",
-    "@types/node-fetch": "^2.5.4",
-    "electron": "^7.1.10",
     "lokijs": "^1.5.8",
     "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@pyoner/svelte-types": "^3.4.4-2",
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-json": "^4.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "@rollup/plugin-typescript": "^3.0.0",
+    "@types/lokijs": "^1.5.3",
+    "@types/node": "^12.12.26",
+    "@types/node-fetch": "^2.5.4",
+    "electron": "^8.0.1",
+    "rollup": "^1.31.1",
+    "rollup-plugin-svelte": "^5.1.1",
+    "svelte": "^3.18.2",
+    "tslib": "^1.10.0",
+    "typescript": "^3.7.5"
   }
 }

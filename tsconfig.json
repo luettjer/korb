@@ -1,16 +1,21 @@
 
 {
     "compilerOptions": {
-        "module": "commonjs",
-        "noImplicitAny": true,
+        "target": "es6",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "allowJs": true,
         "sourceMap": true,
+        "types": ["@pyoner/svelte-types"],
+        "diagnostics": true,
+        "importHelpers": true,
         "outDir": "dist",
-        "baseUrl": ".",
-        "paths": {
-            "*": ["node_modules/*"]
-        }
+        "baseUrl": "."
     },
     "include": [
-        "src/**/*"
+        "app/src/**/*"
+    ],
+    "exclude": [
+        "node_modules"
     ]
 }

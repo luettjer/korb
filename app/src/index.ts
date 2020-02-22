@@ -37,10 +37,10 @@ import { League } from "./api/league/";
 //let date = new Date("2020-01-01");
 //scores.fetchScoresForDate(date).then(r => console.log(r));
 
-//let games: Games = new Games();
-//games.fetchMiniBoxscore(new Date("2020-02-04"), "0021900751").then(r => console.log(r));
-//games.fetchPlayByPlay(new Date("2020-02-04"), "0021900751", 3).then(r => console.log(r));
-//games.fetchLeadTracker(new Date("2020-02-04"), "0021900751", 3).then(r => console.log(r));
+let games: Games = new Games();
+games.fetchMiniBoxscore(new Date("2020-02-04"), "0021900751").then(r => console.log(r));
+games.fetchPlayByPlay(new Date("2020-02-04"), "0021900751", 3).then(r => console.log(r));
+games.fetchLeadTracker(new Date("2020-02-04"), "0021900751", 3).then(r => console.log(r));
 
 let win: Electron.BrowserWindow | null;
 
@@ -53,7 +53,9 @@ function createWindow() {
     }
   });
 
-  win.loadFile(path.join(__dirname, "../app/static/index.html"));
+  win.loadFile(
+    path.join(__dirname, "../static/index.html")
+  );
   win.on("closed", () => {
     win = null;
   });
