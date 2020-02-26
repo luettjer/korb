@@ -8,6 +8,7 @@
     </head>
     <body>
         <script>document.write(process.versions.chrome);</script>
-        <script defer src="../dist/renderer/bundle.js"></script>
+        <script>require("../dist/renderer/bundle.js");</script>
+        <div id="app"></div>
     </body>
 </html>

@@ -1,21 +1,23 @@
 
 {
     "compilerOptions": {
-        "target": "es6",
-        "module": "esnext",
+        "module": "commonjs",
         "moduleResolution": "node",
-        "allowJs": true,
+        "strict": true,
+        "noImplicitAny": true,
         "sourceMap": true,
-        "types": ["@pyoner/svelte-types"],
         "diagnostics": true,
-        "importHelpers": true,
         "outDir": "dist",
-        "baseUrl": "."
+        "baseUrl": ".",
+        "paths": {
+            "*": ["node_modules/"]
+        },
+        "types": ["svelte"]
     },
     "include": [
-        "app/src/**/*"
+        "app/src/**/*.ts"
     ],
     "exclude": [
-        "node_modules"
+        "app/src/renderer/**/*"
     ]
 }
