@@ -8,10 +8,10 @@
   "license": "GPL3",
   "private": true,
   "scripts": {
-    "build": "tsc && rollup -c",
+    "build": "tsc && webpack --env.production",
     "watch": "tsc -w",
     "start": "electron ./dist/index.js",
-    "dev": "tsc && rollup -cw"
+    "dev": "tsc && webpack -w --env.NODE_ENV=development"
   },
   "dependencies": {
     "lokijs": "^1.5.8",
