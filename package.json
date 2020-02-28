@@ -11,7 +11,7 @@
     "build": "tsc && webpack --env.production",
     "watch": "tsc -w",
     "start": "electron ./dist/index.js",
-    "dev": "tsc && webpack -w --env.NODE_ENV=development"
+    "dev": "tsc && webpack -w --env.NODE_ENV=development && npm run start"
   },
   "dependencies": {
     "lokijs": "^1.5.8",
