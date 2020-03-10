@@ -1,11 +1,6 @@
 import {app, BrowserWindow} from "electron";
 import * as path from "path";
-import { Teams } from "./api/teams/";
-import { Players } from "./api/players/";
-import { Scores } from "./api/scores/";
-import { Games } from "./api/games/";
-import { League } from "./api/league/";
-
+import { Teams, Players, Scores, Games, League } from "./api/";
 //let teams: Teams = new Teams();
 //teams.fetchTeams().then(r => console.log(r));
 //teams.fetchTeamsConfig().then(r => console.log(r));

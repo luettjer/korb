@@ -15,7 +15,7 @@
         "types": ["svelte"]
     },
     "include": [
-        "app/src/**/*.ts"
+        "src/**/*.ts"
     ],
     "exclude": [
         "app/src/renderer/**/*"

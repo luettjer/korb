@@ -1,4 +1,4 @@
-import { NbaApi } from "../";
+import { NbaApi } from "../api";
 import fetch from "node-fetch";
 
 export class Players extends NbaApi {

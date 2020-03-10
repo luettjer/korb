@@ -14,7 +14,7 @@
     "dev": "tsc && webpack -w --env.NODE_ENV=development"
   },
   "dependencies": {
-    "lokijs": "^1.5.8",
+    "lowdb": "^1.0.0",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
