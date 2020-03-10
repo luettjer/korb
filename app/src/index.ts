@@ -32,15 +32,15 @@ import { League } from "./api/league/";
 //league.fetchTeamStatsLeader().then(r => console.log(r));
 //league.fetchLastFiveGameTeamStats().then(r => console.log(r));
 
-//let scores: Scores = new Scores();
-//scores.fetchToday(new Date("2020-01-01").then(r => console.log(r));
+let scores: Scores = new Scores();
+scores.fetchScores(new Date("2020-01-01")).then(r => console.log(r));
 //let date = new Date("2020-01-01");
 //scores.fetchScoresForDate(date).then(r => console.log(r));
 
-let games: Games = new Games();
-games.fetchMiniBoxscore(new Date("2020-02-04"), "0021900751").then(r => console.log(r));
-games.fetchPlayByPlay(new Date("2020-02-04"), "0021900751", 3).then(r => console.log(r));
-games.fetchLeadTracker(new Date("2020-02-04"), "0021900751", 3).then(r => console.log(r));
+//let games: Games = new Games();
+//games.fetchMiniBoxscore(new Date("2020-02-04"), "0021900751").then(r => console.log(r));
+//games.fetchPlayByPlay(new Date("2020-02-04"), "0021900751", 3).then(r => console.log(r));
+//games.fetchLeadTracker(new Date("2020-02-04"), "0021900751", 3).then(r => console.log(r));
 
 let win: Electron.BrowserWindow | null;
 
