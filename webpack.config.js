@@ -10,7 +10,7 @@ module.exports = env => {
 
   return {
     entry: {
-      frontend: "./app/src/renderer/index.ts",
+      frontend: "./src/renderer/index.ts",
     },
     output: {
       filename: "bundle.js",
@@ -27,12 +27,12 @@ module.exports = env => {
       rules: [
         {
           test: /\.ts?$/,
-          include: path.resolve(__dirname, "app/src"),
+          include: path.resolve(__dirname, "src"),
           loader: "ts-loader",
         },
         {
           test: /\.(html|svelte)$/,
-          include: path.resolve(__dirname, "app/src/renderer"),
+          include: path.resolve(__dirname, "src/renderer"),
           exclude: "/node_modules/",
           use: {
             loader: "svelte-loader",

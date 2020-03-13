@@ -11,15 +11,16 @@
     "build": "tsc && webpack --env.production",
     "watch": "tsc -w",
     "start": "electron ./dist/index.js",
-    "dev": "tsc && webpack -w --env.NODE_ENV=development"
+    "dev": "tsc -w & webpack -w --env.NODE_ENV=development"
   },
   "dependencies": {
     "lowdb": "^1.0.0",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.0",
+    "svelte-routing": "^1.4.2"
   },
   "devDependencies": {
     "@pyoner/svelte-types": "^3.4.4-2",
-    "@types/lokijs": "^1.5.3",
+    "@types/lowdb": "^1.0.9",
     "@types/node": "^12.12.26",
     "@types/node-fetch": "^2.5.4",
     "css-loader": "^3.4.2",

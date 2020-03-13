@@ -1,15 +1,16 @@
 <script>
-    import { Teams } from "../api/";
+    import teams from "../../data/teams";
 
-    let teams = new Teams();
-    let teams_data = teams.fetchTeams();
+    let teamsData = teams();
 </script>
-{#await teams_data}
+{#await teamsData}
     <p>waiting...</p>
-{:then teams_data}
-    {#each teams_data.league.standard as team}
+{:then teamsData}
+    <ul>
+    {#each teamsData.teams as team}
         {#if team.isNBAFranchise}
-            <p>{team.fullName}</p>
+            <li>{team.fullName}</li>
         {/if}
     {/each}
+    </ul>
 {/await}

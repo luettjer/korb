@@ -1,6 +1,7 @@
 import {app, BrowserWindow} from "electron";
 import * as path from "path";
 import { Teams, Players, Scores, Games, League } from "./api/";
+
 //let teams: Teams = new Teams();
 //teams.fetchTeams().then(r => console.log(r));
 //teams.fetchTeamsConfig().then(r => console.log(r));
@@ -27,8 +28,8 @@ import { Teams, Players, Scores, Games, League } from "./api/";
 //league.fetchTeamStatsLeader().then(r => console.log(r));
 //league.fetchLastFiveGameTeamStats().then(r => console.log(r));
 
-let scores: Scores = new Scores();
-scores.fetchScores(new Date("2020-01-01")).then(r => console.log(r));
+//let scores: Scores = new Scores();
+//scores.fetchScores(new Date("2020-01-01")).then(r => console.log(r));
 //let date = new Date("2020-01-01");
 //scores.fetchScoresForDate(date).then(r => console.log(r));
 
@@ -49,14 +50,16 @@ function createWindow() {
   });
 
   win.loadFile(
-    path.join(__dirname, "../static/index.html")
+    path.join(__dirname, "../public/index.html")
   );
   win.on("closed", () => {
     win = null;
   });
 }
 
-app.on("ready", createWindow);
+app.on("ready", () => {
+  createWindow();
+});
 
 if(process.platform === "darwin") {
   app.on("window-all-closed", () => {

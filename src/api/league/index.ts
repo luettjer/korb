@@ -6,6 +6,12 @@ export class League extends NbaApi {
     super(additional_headers);
   }
 
+  // fetches Season information
+  fetchToday() {
+    return fetch(this.api_url + "v3/today.json")
+    .then(res => res.json());
+  }
+
   fetchCoaches() {
     return fetch(this.api_url + "v1/" + this.year + "/coaches.json")
     .then(res => res.json());
