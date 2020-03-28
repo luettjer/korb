@@ -1,7 +1,7 @@
 <script>
     import teams from "../../data/teams";
 
-    let teamsData = teams();
+    let teamsData = teams.allTeams();
 </script>
 {#await teamsData}
     <p>waiting...</p>

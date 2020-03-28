@@ -1,6 +1,5 @@
 <script>
-    import TeamList from "./components/TeamList.svelte";
-</script>
+    import Scores from "./components/Scores.svelte";
 
-<SideBar/>
-<Scores/>
+</script>
+<Scores />
