@@ -1,25 +1,43 @@
 <script>
     import Scores from "../../data/scores";
-    import Teams from "../../data/teams";
 
     let d = new Date();
-    function previousDate() {
-        $: d.setDate(d.getDate() - 1);
+    let scoresData = Scores.getScores(d);
+
+    function previousDay() {
+        d.setDate(d.getDate() - 1);
+        scores();
     }
 
-    let teams = Teams.allTeams(); 
-    let scoresData = Scores.getScores(d);
-    console.log(scoresData);
+    function nextDay() {
+        d.setDate(d.getDate() + 1);
+        scores();
+    }
+
+    function scores() {
+        scoresData = Scores.getScores(d);
+    }
 </script>
-<button on:click={previousDate}>&lt;</button>
-{#await scoresData}
+<button on:click={ previousDay }>&lt;</button>
+<button on:click={ nextDay }>&gt;</button>
+{ #await scoresData }
     <p>waiting</p>
-{:then scoresData}
-    {#each scoresData.games as score}
+{ :then scoresData }
+    <p>{ d.toISOString() }</p>
+    { #each scoresData.games as score }
         <div class="score-container">
-            {score.vTeam.triCode} [{score.vTeam.score}]
-            vs. 
-            [{score.hTeam.score}] {score.hTeam.triCode} 
+            <div class="score-team-container">
+                { score.vTeam.triCode } 
+            </div>
+            <div class="score-team-score-container">
+                { score.vTeam.score }
+            </div>
+            <div class="score-team-score-container">
+                { score.hTeam.score }
+            </div>
+            <div class="score-team-container">
+                { score.hTeam.triCode } 
+            </div>
         </div>
-    {/each}
-{/await}
+    { /each }
+{ /await }

@@ -1,13 +1,14 @@
 <script>
-    import teams from "../../data/teams";
+    import Teams from "../../data/teams";
 
-    let teamsData = teams.allTeams();
+    let teams = Teams.allTeams();
+    console.log(teams);
 </script>
-{#await teamsData}
+{#await teams}
     <p>waiting...</p>
-{:then teamsData}
+{:then teams}
     <ul>
-    {#each teamsData.teams as team}
+    {#each teams as team}
         {#if team.isNBAFranchise}
             <li>{team.fullName}</li>
         {/if}

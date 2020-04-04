@@ -14,6 +14,7 @@
     "dev": "tsc -w & webpack -w --env.NODE_ENV=development"
   },
   "dependencies": {
+    "electron-reload": "^1.5.0",
     "lowdb": "^1.0.0",
     "node-fetch": "^2.6.0",
     "svelte-routing": "^1.4.2"
@@ -24,15 +25,15 @@
     "@types/node": "^12.12.26",
     "@types/node-fetch": "^2.5.4",
     "css-loader": "^3.4.2",
-    "electron": "^8.1.0",
+    "electron": "^8.2.0",
     "mini-css-extract-plugin": "^0.9.0",
     "style-loader": "^1.1.3",
-    "svelte": "^3.19.2",
+    "svelte": "^3.20.1",
     "svelte-loader": "^2.13.6",
-    "ts-loader": "^6.2.1",
+    "ts-loader": "^6.2.2",
     "tslib": "^1.10.0",
     "typescript": "^3.8.3",
-    "webpack": "^4.42.0",
+    "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   }
 }

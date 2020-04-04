@@ -7,8 +7,6 @@ const teams: Teams = new Teams();
 const teamsAdapter = new LocalStorage("db");
 const teamsDb = low(teamsAdapter);
 
-let allTeams;
-
 teamsDb.defaults({
   teams: [],
   lastUpdate: false,
@@ -26,11 +24,13 @@ export default {
       today.getFullYear() > lastUpdate.getFullYear() || 
       today.getFullYear() === lastUpdate.getFullYear && today.getMonth() > lastUpdate.getMonth();
   },
-  fetchAllTeams: function() {
-    return new Promise((resolve,reject) => {
+  fetchAllTeams: async function() {
       if(this.checkIfUpdate()) {
-        teams.fetchTeams().then((data) => {
+        teams.fetchTeams().then(async (data) => {
           console.info("#info => fetched teams");
+
+          let teamsConfig = await teams.fetchTeamsConfig()
+          console.log(teamsConfig);
 
           teamsDb.setState({
             teams: data.league.standard,
@@ -42,10 +42,10 @@ export default {
         console.info("#info => teams up to date");
       }
 
-      resolve(teamsDb.getState());
-    });
+      return teamsDb.getState()
   },
-  allTeams: function(): Object {
+  allTeams: function() {
+    console.log(this.fetchAllTeams());
     return teamsDb.getState().teams;
   },
   team: function(teams: Array<Object>, teamId: string) {
