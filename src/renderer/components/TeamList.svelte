@@ -9,6 +9,7 @@
 {:then teams}
     <ul>
     {#each teams as team}
+        {console.log(team)}
         {#if team.isNBAFranchise}
             <li>{team.fullName}</li>
         {/if}

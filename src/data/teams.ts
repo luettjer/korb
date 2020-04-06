@@ -24,7 +24,7 @@ export default {
       today.getFullYear() > lastUpdate.getFullYear() || 
       today.getFullYear() === lastUpdate.getFullYear && today.getMonth() > lastUpdate.getMonth();
   },
-  fetchAllTeams: async function() {
+  fetchAllTeams: async function(): Promise<{}> {
       if(this.checkIfUpdate()) {
         teams.fetchTeams().then(async (data) => {
           console.info("#info => fetched teams");
@@ -42,11 +42,11 @@ export default {
         console.info("#info => teams up to date");
       }
 
-      return teamsDb.getState()
+      return teamsDb.getState();
   },
   allTeams: function() {
-    console.log(this.fetchAllTeams());
-    return teamsDb.getState().teams;
+    let teams = this.fetchAllTeams().then(t => console.log(t));
+    return teams;
   },
   team: function(teams: Array<Object>, teamId: string) {
     let team = teams.filter((t: any) => { 
