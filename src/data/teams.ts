@@ -24,7 +24,7 @@ export default {
       today.getFullYear() > lastUpdate.getFullYear() || 
       today.getFullYear() === lastUpdate.getFullYear && today.getMonth() > lastUpdate.getMonth();
   },
-  fetchAllTeams: async function(): Promise<{}> {
+  fetchAllTeams: function(): Promise<{}> {
       if(this.checkIfUpdate()) {
         teams.fetchTeams().then(async (data) => {
           console.info("#info => fetched teams");
