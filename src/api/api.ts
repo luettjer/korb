@@ -16,7 +16,7 @@ export class NbaApi {
 
   }
 
-  getNbaDate(date: Date) {
+  getNbaDate(date: Date): string {
     let month: number | string = date.getMonth() + 1;
     month = month < 10 ? '0' + month : month;
 

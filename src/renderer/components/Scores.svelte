@@ -1,7 +1,7 @@
 <script>
     import Scores from "../../data/scores";
 
-    let d = new Date();
+    let d = new Date("2020-01-17");
     let scoresData = Scores.getScores(d);
 
     function previousDay() {

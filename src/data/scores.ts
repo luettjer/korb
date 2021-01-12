@@ -8,10 +8,6 @@ const scores: Scores = new Scores();
 export default {
   scores: {},
   getScores: function(date: Date) {
-    return new Promise( (resolve, reject) => {
-      scores.fetchScores(date).then( (scores) => {
-        resolve(scores);
-      });
-    });
+    return scores.fetchScores(date);
   },
 };

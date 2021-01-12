@@ -4,4 +4,3 @@
 
 </script>
 <Scores />
-<TeamList />
